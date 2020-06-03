@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounterTestProj\\MonyCounterTestProj.csproj": {}
+    "D:\\proj\\moneyCounterBot\\MonyCounterTestProj\\MonyCounterTestProj.csproj": {}
   },
   "projects": {
-    "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounterTestProj\\MonyCounterTestProj.csproj": {
+    "D:\\proj\\moneyCounterBot\\MonyCounterTestProj\\MonyCounterTestProj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounterTestProj\\MonyCounterTestProj.csproj",
+        "projectUniqueName": "D:\\proj\\moneyCounterBot\\MonyCounterTestProj\\MonyCounterTestProj.csproj",
         "projectName": "MonyCounterTestProj",
-        "projectPath": "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounterTestProj\\MonyCounterTestProj.csproj",
-        "packagesPath": "C:\\Users\\adm\\.nuget\\packages\\",
-        "outputPath": "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounterTestProj\\obj\\",
+        "projectPath": "D:\\proj\\moneyCounterBot\\MonyCounterTestProj\\MonyCounterTestProj.csproj",
+        "packagesPath": "C:\\Users\\son\\.nuget\\packages\\",
+        "outputPath": "D:\\proj\\moneyCounterBot\\MonyCounterTestProj\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\adm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\son\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounter\\MonyCounter.csproj": {
-                "projectPath": "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounter\\MonyCounter.csproj"
+              "D:\\proj\\moneyCounterBot\\MonyCounter\\MonyCounter.csproj": {
+                "projectPath": "D:\\proj\\moneyCounterBot\\MonyCounter\\MonyCounter.csproj"
               }
             }
           }
@@ -82,12 +82,12 @@
         }
       }
     },
-    "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounter\\MonyCounter.csproj": {
+    "D:\\proj\\moneyCounterBot\\MonyCounter\\MonyCounter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounter\\MonyCounter.csproj",
+        "projectUniqueName": "D:\\proj\\moneyCounterBot\\MonyCounter\\MonyCounter.csproj",
         "projectName": "MonyCounter",
-        "projectPath": "D:\\proj\\monyCounterC\\MonyCounter\\MonyCounter\\MonyCounter.csproj"
+        "projectPath": "D:\\proj\\moneyCounterBot\\MonyCounter\\MonyCounter.csproj"
       },
       "frameworks": {
         "net472": {}

@@ -26,6 +26,10 @@ namespace MonyCounter.Models
             commandsList.Add(new HelloCommand());
             commandsList.Add(new StartCommand());
             commandsList.Add(new AddCommand());
+            commandsList.Add(new GetCostsCommand());
+            commandsList.Add(new HelpCommand());
+            commandsList.Add(new EditCommand());
+            commandsList.Add(new GetLinkCommand());
             //commandsList.Add(new CategoryCommand());
             //TODO: Add more commands
 

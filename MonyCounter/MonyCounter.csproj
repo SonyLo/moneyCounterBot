@@ -142,7 +142,11 @@
     <Compile Include="Models\Commands\AddCommand.cs" />
     <Compile Include="Models\Commands\CategoryCommand.cs" />
     <Compile Include="Models\Commands\Command.cs" />
+    <Compile Include="Models\Commands\EditCommand.cs" />
+    <Compile Include="Models\Commands\GetCostsCommand.cs" />
+    <Compile Include="Models\Commands\GetLinkCommand.cs" />
     <Compile Include="Models\Commands\HelloCommand.cs" />
+    <Compile Include="Models\Commands\HelpCommand.cs" />
     <Compile Include="Models\Commands\StartCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,7 +166,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\MonyCounter - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\MonyCounter - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\MonyCounter - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\MonyCounter - Web Deploy1.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

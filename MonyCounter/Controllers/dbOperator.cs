@@ -210,6 +210,8 @@ namespace MonyCounter.Controllers
 
                 SqlCommand command = new SqlCommand(sql, sc);
 
+
+
                 command.Parameters.AddWithValue("@idUser", ob.idUser);
                 command.Parameters.AddWithValue("@nameCost", ob.nameCost);
                 command.Parameters.AddWithValue("@spending", ob.spending);
@@ -238,12 +240,12 @@ namespace MonyCounter.Controllers
 
             public string UpdateIsCost(Money ob)
             {
-
+                
 
                 if (sc == null || sc.State != System.Data.ConnectionState.Open)
                     sc = db.Connect();
 
-                string sql = "Update money set isCosts = @isCosts where idUser = @idUser";
+                string sql = "Update money set isCosts = @isCosts where idUser = @idUser  where ";
 
 
                 SqlCommand command = new SqlCommand(sql, sc);
@@ -270,6 +272,63 @@ namespace MonyCounter.Controllers
 
 
 
+            }
+
+            public List<string> GetAllSpending(string usrerID)
+            {
+                List<string> distNameCost = new List<string>();
+                List<string> allSpending = new List<string>();
+                try
+                {
+                    if (sc == null || sc.State != System.Data.ConnectionState.Open)
+                        sc = db.Connect();
+
+                    string sql = "SELECT DISTINCT nameCost, idUser from Money WHERE idUser = @idUser and isCosts = 1";
+
+
+                    SqlCommand command = new SqlCommand(sql, sc);
+
+                    command.Parameters.AddWithValue("@idUser", usrerID);
+
+                    SqlDataReader rd = command.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        distNameCost.Add(rd["nameCost"].ToString()) ;
+                    }
+                    rd.Close();
+                    double summ = 0;
+                    foreach (string item in distNameCost)
+                    {
+                        sql = "SELECT SUM(CASE WHEN ISNUMERIC(m.spending) = 1 THEN CAST(m.spending AS INT) ELSE 0 END) as allSpending FROM Money m WHERE m.nameCost  = @nameCost  AND idUser = @idUser and isCosts = 1 and MONTH(m.dateCosts ) = MONTH(GETDATE()) AND YEAR(m.dateCosts ) = YEAR(GETDATE());";
+                        command = new SqlCommand(sql, sc);
+
+                        command.Parameters.AddWithValue("@idUser", usrerID);
+                        command.Parameters.AddWithValue("@nameCost", item);
+                        rd = command.ExecuteReader();
+                        
+                        while (rd.Read())
+                        {
+                            summ = summ+ Convert.ToDouble(rd["allSpending"]);
+                            allSpending.Add(item+" - "+ rd["allSpending"].ToString());
+                        }
+                        
+                        rd.Close();
+                    }
+                    allSpending.Add("Всего: " + summ);
+
+
+
+                    Disconnect(sc);
+                    return allSpending;
+                }
+                catch (Exception ex)
+                {
+                    //ob.FirstName = ex.Message;
+                    //return ob;
+                    allSpending.Add(ex.Message);
+                    return allSpending;
+                }
             }
 
 

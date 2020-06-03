@@ -20,7 +20,7 @@ namespace MonyCounter.Controllers
             var commands = Bot.Commands;
             var message = update.Message;
             var client = await Bot.Get();
-            int tempVar = 0;
+          
 
             foreach (var command in commands)
             {
@@ -34,19 +34,19 @@ namespace MonyCounter.Controllers
 
             }
 
-            tempVar = message.Text.IndexOf('-');
+            
             AddCommand addCommand = new AddCommand();
-            if (tempVar != -1)
+            if (message.Text.IndexOf('-') != -1 || message.Text.IndexOf('+') != -1)
             {
                 //вызвать addCommand
                 await addCommand.Execute(message, client);
                
             }
-            else
-            {
-                await addCommand.Add(message, client);
+            //else
+            //{
+            //    await addCommand.Add(message, client);
                
-            }
+            //}
 
             return Ok();
         }
